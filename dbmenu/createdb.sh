@@ -15,15 +15,15 @@ echo "Enter a valid name that satisfies MYSQL naming convention"
     read -p "Enter the database name: " DataBaseName
 fi
    # Checking the existence of the database.
-      if [[ -d ./DataBase/$DataBaseName ]]; then
+      if [[ -d ./DBs/$DataBaseName ]]; then
       echo "Database with the name '$DataBaseName' already exists. Please choose another name."
 	read -p "Enter the database name: " DataBaseName
-mkdir ./DataBase/"$DataBaseName"
+mkdir ./DBs/"$DataBaseName"
       echo "Database '$DataBaseName' was created successfully."
 	
    
      else
-      mkdir ./DataBase/"$DataBaseName"
+      mkdir ./DBs/"$DataBaseName"
       echo "Database '$DataBaseName' was created successfully."
     fi
 
