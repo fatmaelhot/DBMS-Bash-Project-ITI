@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Create a new database by checking two conditions:
-# 1- Its existence in the Database system.
-# 2- A valid name.
+# - Its existence in the Database system.
+# - A valid name.
 
-# Prompt for entering the database name.
+
 echo "Enter the database name: "
 read DataBaseName
 
