@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Create a new database by checking two conditions:
 # - Its existence in the Database system.
@@ -27,5 +27,4 @@ mkdir ../../DBs/"$DataBaseName"
       echo "Database '$DataBaseName' was created successfully."
     fi
 
-    
 
