@@ -19,6 +19,10 @@ elif [[ -d ../DBs/$db ]]; then
 				cd ./../tablemenu 
 				./droptable.sh $db
 				;;
+			"list table" )
+				cd ./../tablemenu
+				./listtable.sh $db
+				;;
 			"update table" )  
 				tableMenu/updatetable.sh $db
 				;;

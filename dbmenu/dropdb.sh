@@ -1,6 +1,6 @@
-#!/usr/bin/bash
+#! /bin/bash
 echo "Existance DataBases"
-ls -1 ./DBs
+ls -1 ../DBs
 read -p "Enter DataBase Name: " name
 if [[ -d DBs/$name ]]; then
 	read -p "Are you Sure You Want To drop $name Database? y/n" choice

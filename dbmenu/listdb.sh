@@ -1,4 +1,4 @@
 #!/bin/bash
  
-           ls -l ./DBs
+           ls -l ../DBs
           
