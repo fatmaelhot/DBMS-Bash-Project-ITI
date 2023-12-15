@@ -2,11 +2,7 @@
 
 
 # Create a database directory if it doesn't exist
-<<<<<<< HEAD
 [[ -d ./DBs ]] || mkdir ./DBs
-=======
-[[ -d ./DataBase ]] || mkdir ./DataBase
->>>>>>> fb37d6de070db90dbc02d07f0f5cd6c3baa65444
 
 while true; do
   PS3="Welcome to BDMS Main Menu: Please Select an option (1-5): "
@@ -15,39 +11,22 @@ select var in createDB listDB dropDB connectDB Exit
 do
 	case $var in
 		createDB )	
+			cd ./dbmenu 
+			./createdb.sh
 
-<<<<<<< HEAD
-			 ./dbmenu/createdb.sh
-=======
-			 ./CreateDB.sh
 		;;
 		listDB )
-			./listDB.sh
+		         cd ./dbmenu 
+			 ./listdb.sh
 		;;
 		dropDB ) 
+		         cd ./dbmenu 
 		         ./dropdb.sh
 		;;
 
 		connectDB )
-			 ./connectdb.sh
-
-			 
->>>>>>> fb37d6de070db90dbc02d07f0f5cd6c3baa65444
-		;;
-		listDB )
-			./dbmenu/listdb.sh
-		;;
-		dropDB ) 
-		         ./dbmenu/dropdb.sh
-		;;
-
-		connectDB )
-<<<<<<< HEAD
-			 ./dbmenu/connectdb.sh	 
-=======
-			bash ./dbmenu/connectdb.sh
-
->>>>>>> fb37d6de070db90dbc02d07f0f5cd6c3baa65444
+			 cd ./dbmenu 
+			 ./connectdb.sh	 
 		;;
 		 
 		Exit )

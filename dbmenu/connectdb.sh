@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 echo "Available DataBases"
-ls -1 ../DBs/
+ls -1 ./../DBs
 
 read -p "Enter DataBase Name: " db
 
@@ -12,10 +12,12 @@ elif [[ -d ../DBs/$db ]]; then
 	do
 		case $var in
 			"create table" )	
-				bash tableMenu/createtable.sh $db
+				cd ./../tablemenu
+				./createtable.sh $db
 				;;
 			"drop table" )
-				bash tableMenu/droptable.sh $db
+				cd ./../tablemenu 
+				./droptable.sh $db
 				;;
 			"update table" )  
 				tableMenu/updatetable.sh $db
