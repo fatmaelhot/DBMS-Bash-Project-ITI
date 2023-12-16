@@ -23,13 +23,15 @@ elif [[ -d ../DBs/$db ]]; then
 				tableMenu/updatetable.sh $db
 				;;
 			"insert record")
-				tableMenu/insert.sh $db
+				cd ./../tablemenu 
+				./insertData.sh $db
 				;;
 			"Delete from table" )  
 					bash tableMenu/deleterec.sh $db
 				;;
 			"Select from table" )
-					bash tableMenu/selectrec.sh $db
+				cd ./../tablemenu 
+				./select.sh $db
 				;;
 			"disconnect" )
 			        exit

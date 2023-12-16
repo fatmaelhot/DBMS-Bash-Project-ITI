@@ -53,7 +53,7 @@ createFields(){
       
       #to create the rest of columns
        
-      for (( i = 1; i < cols; i++ ));do
+      for (( i = 2; i <= cols; i++ ));do
          #column name
          value=true
       while $value;
@@ -92,7 +92,12 @@ createFields(){
          
       done
       
-      
+      # last column
+      if [[ i -eq $cols ]]; then
+	echo "," >> "$tablename"
+	echo "table created successfully"
+							 
+      fi
     done
  fi
 }
@@ -115,11 +120,11 @@ elif [[ -e "./../DBs/$1/$tablename" ]];then
 elif [[ "$tablename" =~ ^[a-zA-Z] ]];then
     cd ./../DBs/$1
     touch $tablename
+    chmod +x $tablename
     createFields;
     value=false
 else  
     echo "table name can not start with numbers or special character "
 fi
 done
-
 
