@@ -24,13 +24,16 @@ elif [[ -d ../DBs/$db ]]; then
 				./listtable.sh $db
 				;;
 			"update table" )  
-				tableMenu/updatetable.sh $db
+				cd ./../tablemenu
+				./updattable.sh $db
 				;;
 			"insert record")
 				tableMenu/insert.sh $db
 				;;
 			"Delete from table" )  
-					bash tableMenu/deleterec.sh $db
+					cd ./../tablemenu
+                                           ./deletetable.sh $db
+					
 				;;
 			"Select from table" )
 					bash tableMenu/selectrec.sh $db
