@@ -19,7 +19,7 @@ else
 fi
 
 
-select var in "Delete all from table" "Delete Record" "Delete coulmn"; do
+select var in "Delete all from table" "Delete Record" ; do
     case $var in
         "Delete Record")
     read -p "Enter the Record ID to delete: " RecordID
