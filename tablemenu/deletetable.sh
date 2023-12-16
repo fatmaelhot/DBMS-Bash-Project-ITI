@@ -1,11 +1,15 @@
 #!/bin/bash
 
 read -p "Enter Database Name: " DBName
+if [ -d "../DBs/$DBName" ]; then
 read -p "Enter Table Name: " TName
-
+else
+echo "DB name doesn't exist"
+exit 
+fi
 # Check if the database and table exist
 
-if [ -d "../DBs/$DBName" ] && [ -f "../DBs/$DBName/$TName" ]; then
+ if [ -f "../DBs/$DBName/$TName" ]; then
     # Change to the table's directory
     cd "../DBs/$DBName"
 
@@ -14,7 +18,7 @@ if [ -d "../DBs/$DBName" ] && [ -f "../DBs/$DBName/$TName" ]; then
     cat "$TName"
     echo
 else
-    echo "Database or table doesn't exist."
+    echo " table doesn't exist."
     exit 1
 fi
 
