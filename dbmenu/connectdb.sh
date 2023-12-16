@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 echo "Available DataBases"
-ls -1 ./../DBs
+ls -1 ../DBs
 
 read -p "Enter DataBase Name: " db
 

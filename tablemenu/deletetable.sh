@@ -19,30 +19,37 @@ else
 fi
 
 
-select var in "Delete all from table" "Delete Record" ; do
+select var in "Delete all from table" "Delete Record" "Delete coulmn"; do
     case $var in
         "Delete Record")
-            read -p "Enter the Record num to delete: " RecordNum
+    read -p "Enter the Record ID to delete: " RecordID
 
-            # Check if the record num is valid (non-empty and a number)
-            if [[ -n $RecordNum && $RecordNum =~ ^[0-9]+$ ]]; then
-                # Use sed to delete the specified record by its num
-                sed -i "${RecordNum}d" "$TName"
+    # Check if the record ID is valid (non-empty and a number)
+    if [[ -n $RecordID && $RecordID =~ ^[0-9]+$ ]]; then
+        # Use awk to find the line number based on the ID and sed to delete the record
+        linenum=$(awk -F':' -v id="$RecordID" '$1 == id {print NR; exit}' "$TName")
 
-                # Check if sed operation was successful
-                if [ $? -eq 0 ]; then
-                    echo "Record with num $RecordNum has been deleted."
+        if [[ -n $linenum ]]; then
+            sed -i "${linenum}d" "$TName"
 
-                    # Display the updated records in the table
-                    echo "Updated records in $TName:"
-                    cat "$TName"
-                else
-                    echo "Something went wrong. Record not deleted."
-                fi
+            # Check if sed operation was successful
+            if [ $? -eq 0 ]; then
+                echo "Record with ID $RecordID has been deleted."
+
+                # Display the updated records in the table
+                echo "Updated records in $TName:"
+                cat "$TName"
             else
-                echo "Invalid Record num. Operation canceled."
+                echo "Something went wrong. Record not deleted."
             fi
-            ;;
+        else
+            echo "Record with ID $RecordID not found."
+        fi
+    else
+        echo "Invalid Record ID. Operation canceled."
+    fi
+    ;;
+
 
         "Delete all from table" )
             # Get the number of rows in the table
@@ -58,7 +65,6 @@ select var in "Delete all from table" "Delete Record" ; do
                 echo "Something went wrong. Rows not deleted."
             fi
             ;;
-
 
 
     esac
