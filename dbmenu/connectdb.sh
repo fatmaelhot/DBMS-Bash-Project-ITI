@@ -28,7 +28,8 @@ elif [[ -d ../DBs/$db ]]; then
 				./updattable.sh $db
 				;;
 			"insert record")
-				tableMenu/insert.sh $db
+				cd ./../tablemenu 
+				./insertData.sh $db
 				;;
 			"Delete from table" )  
 					cd ./../tablemenu
@@ -36,7 +37,8 @@ elif [[ -d ../DBs/$db ]]; then
 					
 				;;
 			"Select from table" )
-					bash tableMenu/selectrec.sh $db
+				cd ./../tablemenu 
+				./select.sh $db
 				;;
 			"disconnect" )
 			        exit
