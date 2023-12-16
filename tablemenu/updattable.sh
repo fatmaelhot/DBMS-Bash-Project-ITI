@@ -1,0 +1,39 @@
+#!/bin/bash
+
+read -p "Enter Database Name: " db_name
+read -p "Enter Table Name: " table_name
+
+table_path="../DBs/$db_name/$table_name"
+
+# Validate path 
+if [ ! -f "$table_path" ]; then
+    echo "Table file does not exist at: $table_path"
+    exit 1
+fi
+
+read -p "Enter ID of the Record to Update: " record_id
+
+# Validate input: Check if ID is empty or not a number
+if [[ -z "$record_id" || ! "$record_id" =~ ^[0-9]+$ ]]; then
+    echo "Invalid or empty record ID."
+    exit 1
+fi
+
+read -p "Enter New Value for Field 1: " new_value_1
+read -p "Enter New Value for Field 2: " new_value_2
+# Add more prompts for other fields as needed
+
+# Use AWK to update the specified record by ID
+awk -v id="$record_id" -v value1="$new_value_1" -v value2="$new_value_2" '
+    BEGIN { FS = ":"; OFS = ":" }
+    NR == 1 { print; next }
+    $1 == id { $2 = value1; $3 = value2; updated = 1 }
+    { print }
+    END { if (!updated) print "Record with ID " id " not found." }
+' "$table_path" > "${table_path}.new"
+
+# Replace the original table with the updated table
+mv "${table_path}.new" "$table_path"
+
+# Display success message
+echo "Record with ID $record_id updated successfully."

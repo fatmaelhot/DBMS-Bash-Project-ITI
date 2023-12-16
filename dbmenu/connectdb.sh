@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 echo "Available DataBases"
-ls -1 ./../DBs
+ls -1 ../DBs
 
 read -p "Enter DataBase Name: " db
 
@@ -24,14 +24,17 @@ elif [[ -d ../DBs/$db ]]; then
 				./listtable.sh $db
 				;;
 			"update table" )  
-				tableMenu/updatetable.sh $db
+				cd ./../tablemenu
+				./updattable.sh $db
 				;;
 			"insert record")
 				cd ./../tablemenu 
 				./insertData.sh $db
 				;;
 			"Delete from table" )  
-					bash tableMenu/deleterec.sh $db
+					cd ./../tablemenu
+                                           ./deletetable.sh $db
+					
 				;;
 			"Select from table" )
 				cd ./../tablemenu 
