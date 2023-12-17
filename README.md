@@ -7,20 +7,20 @@ Project Features
 -----------
 Main Menu
 --------
-Create Database
-List Databases
-Connect To Databases
-Drop Database
+- Create Database
+- List Databases
+- Connect To Databases
+- Drop Database
 
 Table Menu
 ---------
-Create Table
-List Tables
-Drop Table
-Insert into Table
-Select From Table
-Delete From Table
-Update Table
+- Create Table
+- List Tables
+- Drop Table
+- Insert into Table
+- Select From Table
+- Delete From Table
+- Update Table
 
 How to run Project
 -------------------
