@@ -1,5 +1,5 @@
 # Bash Shell Script Database Management System (DBMS)
--------------------------------------------------
+
 Team: 
 ------------
 - ### Alaa Kamal : https://github.com/EngAlaaKamal
