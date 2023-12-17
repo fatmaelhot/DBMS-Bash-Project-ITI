@@ -36,6 +36,7 @@ else
     exit 
 fi
 
+
 # Continue with prompts for new values
 read -p "Enter New Value for Field 1: " new_value_1
 read -p "Enter New Value for Field 2: " new_value_2
@@ -56,3 +57,6 @@ mv "${table_path}.new" "$table_path"
 
 # Display success message
 echo "Record with ID $record_id updated successfully."
+
+
+ 
