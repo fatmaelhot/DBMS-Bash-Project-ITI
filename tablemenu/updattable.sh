@@ -36,6 +36,7 @@ else
     exit 
 fi
 
+
 # Continue with prompts for new values
 read -p "Enter New Value for Field 1: " new_value_1
 read -p "Enter New Value for Field 2: " new_value_2
