@@ -24,4 +24,4 @@ Table Menu
 
 How to run Project
 -------------------
-## after cloning project, go to BBMS-Bash-Project dir and open your terminal then type ./main.sh
+### after cloning project, go to BBMS-Bash-Project dir and open your terminal then type ./main.sh
