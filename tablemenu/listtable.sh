@@ -8,7 +8,7 @@ echo "Error,try again"
 exit 1
 fi
 
-select var in "list all tables" "list spesific table";
+select var in "list all tables" "list spesific table" "Exit";
 do
 case $var in
 
@@ -30,6 +30,14 @@ else
 fi
 
 ;;
+"Exit" )
+exit
+;;
+
+* ) 
+ echo "$REPLY is incorrect input";
+		     exit
+		;;
 
 esac
 done

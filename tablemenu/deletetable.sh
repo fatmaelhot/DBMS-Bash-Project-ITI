@@ -23,7 +23,7 @@ else
 fi
 
 
-select var in "Delete all from table" "Delete Record" ; do
+select var in "Delete all from table" "Delete Record" "Exit"; do
     case $var in
         "Delete Record")
     read -p "Enter the Record ID to delete: " RecordID
@@ -69,6 +69,9 @@ select var in "Delete all from table" "Delete Record" ; do
                 echo "Something went wrong. Rows not deleted."
             fi
             ;;
+	"Exit")
+	exit
+	;;
 
 
     esac

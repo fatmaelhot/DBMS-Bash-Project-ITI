@@ -1,19 +1,19 @@
-Bash Shell Script Database Management System (DBMS)
--------------------------------------------------
-Team: Fatma Nasser and Alaa Kamal
----------------------------------
+# Bash Shell Script Database Management System (DBMS)
+
+Team: 
+------------
+- ### Alaa Kamal : https://github.com/EngAlaaKamal
+- ### Fatma Nasser : https://github.com/fatmaelhot
 
 Project Features
 -----------
-Main Menu
---------
+### Main Menu
 - Create Database
 - List Databases
 - Connect To Databases
 - Drop Database
 
-Table Menu
----------
+### Table Menu
 - Create Table
 - List Tables
 - Drop Table

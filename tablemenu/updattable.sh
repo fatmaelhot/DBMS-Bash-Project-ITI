@@ -56,7 +56,11 @@ awk -v id="$record_id" -v value1="$new_value_1" -v value2="$new_value_2" '
 mv "${table_path}.new" "$table_path"
 
 # Display success message
+<<<<<<< HEAD
 echo "Record with ID $record_id updated successfully."
 
 
  
+=======
+echo "Record with ID $record_id updated successfully."
+>>>>>>> 9519cc7c9ed1369031d30c6365786955ef0c757c
