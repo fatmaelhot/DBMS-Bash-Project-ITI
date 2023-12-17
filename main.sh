@@ -13,15 +13,17 @@ do
 		createDB )	
 			cd ./dbmenu 
 			./createdb.sh
-
+                        cd ..
 		;;
 		listDB )
 		         cd ./dbmenu 
 			 ./listdb.sh
+			 cd ..
 		;;
 		dropDB ) 
 		         cd ./dbmenu 
 		         ./dropdb.sh
+		         
 		;;
 
 		connectDB )
@@ -38,7 +40,7 @@ do
 		;;
 	esac
 
-break
+ break
 
 done
 done

@@ -26,5 +26,5 @@ mkdir ../DBs/"$DataBaseName"
       mkdir ../DBs/"$DataBaseName"
       echo "Database '$DataBaseName' was created successfully."
     fi
-
+ 
 

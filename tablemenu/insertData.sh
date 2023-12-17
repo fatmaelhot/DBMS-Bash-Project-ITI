@@ -1,5 +1,7 @@
 #!/usr/bin/bash
-read -p "enter the name of table" table
+shopt -s extglob
+export LC_COLLATE=C
+read -p "enter the name of table : " table
 
 cd ./../DBs/$1
 if [[ -f "$table" ]];then
@@ -17,13 +19,21 @@ cols=$(head -1 "$table" | awk -F: '{print NF}')
         else
         echo "enter $(head -1 "$table" |cut -d ':' -f$i| awk -F ":"  '{print $i}') ,its type $(head -1 "$table" |cut -d ':' -f$v| awk -F ":" '{print $v}') "
         read
-         #check pk exist
+         
             f=$(head -1 "$table" |cut -d ':' -f1| awk -F ":"  '{print $1}')
            pk=$(sed '' "$table"|cut -d ':' -f1 |grep "$REPLY")
-        if [[ $pk && $col == $f ]];then
-              echo "pk already exist"
-              (( i=$i-2))
-              value=false
+        
+         #check if empty
+         if [[ $REPLY == '' ]];then
+            echo "incorrect, you enter empty name"
+            
+         #check pk exist
+         elif [[ $pk && $col == $f ]];then
+            echo "pk already exist"
+               
+         #special characters
+         elif [[ $REPLY =~ [/:|#@%-] ]];then
+             echo "you can not use special character in the name"
                
         #check datatype
         elif [[ $type = "int" && $REPLY = +([0-9])*([0-9]) ]];then

@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+shopt -s extglob
+export LC_COLLATE=C
 createFields(){
   if [[ -f $tablename ]];then
       #num of cols
@@ -22,7 +24,7 @@ createFields(){
          if [[ $pkname = '' ]];then
             echo "enter the name of pk please"
          #special characters
-         elif [[ $pkname =~ [/.:|-] ]];then
+         elif [[ $pkname =~ [/:|#@%-] ]];then
              echo "you can not use special character in the name"
          #valid name
          elif [[ $pkname =~ ^[a-zA-Z] ]];then
@@ -63,7 +65,7 @@ createFields(){
          if [[ $colname = '' ]];then
             echo "incorrect ,enter the name of column please"
          #special characters
-         elif [[ $colname =~ [/.:|-] ]];then
+         elif [[ $colname =~ [/:|#@%-] ]];then
              echo "you can not use special character in the name"
          #valid name
          elif [[ $colname =~ ^[a-zA-Z] ]];then
@@ -111,7 +113,7 @@ read -p "Enter the name of table : " tablename
 if [[ "$tablename" = "" ]];then
     echo "please enter the name"
 #check special characters
-elif [[ "$tablename" =~ [/.:|-] ]];then
+elif [[ "$tablename" =~ [/:|#@%-] ]];then
     echo "you can not enter these characters"
 #check if exist before
 elif [[ -e "./../DBs/$1/$tablename" ]];then
