@@ -1,4 +1,4 @@
-Bash Shell Script Database Management System (DBMS)
+# Bash Shell Script Database Management System (DBMS)
 -------------------------------------------------
 Team: 
 ------------
@@ -7,15 +7,13 @@ Team:
 
 Project Features
 -----------
-Main Menu
---------
+### Main Menu
 - Create Database
 - List Databases
 - Connect To Databases
 - Drop Database
 
-Table Menu
----------
+### Table Menu
 - Create Table
 - List Tables
 - Drop Table
