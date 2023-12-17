@@ -1,7 +1,9 @@
 Bash Shell Script Database Management System (DBMS)
 -------------------------------------------------
-Team: Fatma Nasser and Alaa Kamal
----------------------------------
+Team: 
+------------
+- ### Alaa Kamal : https://github.com/EngAlaaKamal
+- ### Fatma Nasser : https://github.com/fatmaelhot
 
 Project Features
 -----------
