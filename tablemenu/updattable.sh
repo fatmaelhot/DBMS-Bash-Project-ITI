@@ -57,3 +57,5 @@ mv "${table_path}.new" "$table_path"
 
 # Display success message
 echo "Record with ID $record_id updated successfully."
+
+
